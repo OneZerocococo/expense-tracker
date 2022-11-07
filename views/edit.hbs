@@ -1,0 +1,55 @@
+<div class="container-edit flex-column">
+  <div class="edit-title row g-3 text-center">
+    <div class="col-3">
+      <p>*必填欄位</p>
+    </div>
+    <div class="col-9">
+      <h3>請輸入你的支出</h3>
+    </div>
+  </div>
+  <form action="/" method="POST" class="edit-form">
+    <div class="row">
+      <div class="edit-group-item col-4">
+        <label for="name">名稱<span class="text-danger">*</span>:</label>
+      </div>
+      <div class="edit-group-item col-6">
+        <input type="text" name="name" required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="edit-group-item col-4">
+        <label for="name">日期<span class="text-danger">*</span>:</label>
+      </div>
+      <div class="edit-group-item col-6">
+        <input type="date" name="date" required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="edit-group-item col-4">
+        <label for="amount">類別<span class="text-danger">*</span>:</label>
+      </div>
+      <div class="edit-group-item col-6">
+        <select class="category-dropdown" name="categorySelector" id="categorySelector" onchange="this.form.submit()">
+          <option value="all">所有類別</option>
+          <option value="1">家居物業</option>
+          <option value="2">交通出行</option>
+          <option value="3">休閒娛樂</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="edit-group-item col-4">
+        <label for="amount">金額<span class="text-danger">*</span>:</label>
+      </div>
+      <div class="edit-group-item col-6">
+        <input type="number" name="amount" required />
+      </div>
+    </div>
+
+    <div class="row g-3 align-items-end">
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-block mt-3 record-btn">送　出</button>
+      </div>
+    </div>
+  </form>
+</div>

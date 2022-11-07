@@ -1,0 +1,40 @@
+.container-edit {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-group-item {
+  display: flex;
+  margin: 5px 2px;
+  justify-content: space-between;
+}
+
+.record-btn {
+  background-color: white;
+  color: rgb(60, 59, 59);
+  border-color: grey;
+}
+
+.log-btn {
+  background-color: white;
+  color: orangered;
+  border-color: grey;
+}
