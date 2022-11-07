@@ -19,11 +19,13 @@
     <nav class="navbar navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="/">
-          <b>家庭記帳本</b>
+          <b>{{#if isAuthenticated}}{{user.name}}的{{/if}}家庭記帳本</b>
         </a>
+        {{#if isAuthenticated}}
         <div class="text-right">
           <a href="/users/logout"><button class="log-btn btn btn-secondary btn-outline-light">登出</button></a>
         </div>
+        {{/if}}
       </div>
     </nav>
   </header>
