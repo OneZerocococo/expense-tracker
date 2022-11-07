@@ -1,0 +1,33 @@
+<div class="container user-form">
+  <div class="card register-card sign-form" style="width: 30rem">
+    <div class="card-body">
+      <h1 class="text-center mb-4">註冊</h1>
+      <form action="/users/register" method="POST">
+        <div class="form-group">
+          <label for="name" class="my-2">姓名</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="請輸入姓名" value="{{ name }}">
+        </div>
+        <div class="form-group">
+          <label for="email" class="my-2">電子信箱</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="請輸入email" value="{{ email }}">
+        </div>
+        <div class="form-group">
+          <label for="password" class="my-2">密碼</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="請設置8-12碼的密碼"
+            value="{{ password }}">
+        </div>
+        <div class="form-group">
+          <label for="password" class="my-2">再次確認密碼</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="請再次確認密碼"
+            value="{{ confirmPassword }}">
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn register-btn btn-block mt-3">註冊</button>
+        </div>
+      </form>
+      <p class="lead mt-4 text-center">
+        已經註冊過帳號? <a href="/users/login">點我登入</a>
+      </p>
+    </div>
+  </div>
+</div>

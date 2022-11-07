@@ -12,6 +12,11 @@
   justify-content: space-between;
 }
 
+.login-card,
+.register-card {
+  margin: 20px auto;
+}
+
 .list-group-item {
   display: flex;
   justify-content: space-between;
@@ -26,6 +31,14 @@
   display: flex;
   margin: 5px 2px;
   justify-content: space-between;
+}
+
+.login-btn,
+.register-btn {
+  margin: auto;
+  background-color: rgb(231, 69, 28);
+  color: rgb(255, 255, 255);
+  width: 120px;
 }
 
 .record-btn {

@@ -1,0 +1,22 @@
+<div class="container mb-3 user-form">
+  <div class="card login-card sign-form" style="width: 30rem">
+    <div class="card-body">
+      <h1 class="text-center mb-4">使用者登入</h1>
+      <form action="/users/login" method="POST">
+        <div class="form-group">
+          <label for="email" class="my-2">電子信箱</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+          <label for="password" class="my-2">密碼</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password">
+        </div>
+        <div class="d-grid my-1">
+          <button type="submit" class="btn login-btn btn-block mt-3">登入</button>
+        </div>
+      </form>
+      <p class="lead mt-4 text-center">
+        還沒有帳號嗎? <a href="/users/register">註冊帳號</a>
+    </div>
+  </div>
+</div>
