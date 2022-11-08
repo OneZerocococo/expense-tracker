@@ -15,7 +15,6 @@ db.once('open', () => {
         email,
         password
       })
-        .then(console.log('1'))
         .then(user => {
           const records = recordIndex.map(index => {
             const record = recordList[index]

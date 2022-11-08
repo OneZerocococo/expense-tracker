@@ -22,6 +22,23 @@
   justify-content: space-between;
 }
 
+ul li {
+  list-style: none;
+  background-color: bisque;
+  height: 5vh;
+}
+
+ul :nth-child(even) .item-group {
+  background-color: rgb(255, 255, 255);
+  height: 5vh;
+}
+
+.item-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .edit-title {
   display: flex;
   justify-content: space-between;
@@ -34,7 +51,8 @@
 }
 
 .login-btn,
-.register-btn {
+.register-btn,
+.new-btn {
   margin: auto;
   background-color: rgb(231, 69, 28);
   color: rgb(255, 255, 255);

@@ -1,4 +1,4 @@
-<div class="container" style="width: 20rem; background-color: rgb(230, 244, 230);">
+<div class="container" style="width: 30%;">
   <!-- sort bar-->
   <div class="form-group my-3 d-flex justify-content-center pt-3">
     <form action="/">
@@ -11,58 +11,31 @@
     </form>
   </div>
   <div>
-    <div class="d-flex justify-content-between my-2">
+    <div class="d-flex justify-content-around my-2">
       <span>總金額:</span>
-      <h1 class="d-inline">25260</h1>
+      <h1 class="d-inline" style="color: rgb(255, 64, 0);"><b>{{totalAmount}}</b></h1>
     </div>
   </div>
   <ul class="list-group">
-    <li class="list-group-item bg-secondary">
-      <div class="item-group d-inline">
-        <i class="fa-solid fa-utensils"></i>
-        <span>午餐</span>
-        <span>60</span>
-      </div>
-      <div class="edit-del d-inline">
-        <a href="/edit">修改</a>
-        <a href="/delete">刪除</a>
-      </div>
-    </li>
-    <li class="list-group-item">
-      <div class="item-group d-inline">
-        <i class="fa-solid fa-utensils"></i>
-        <span>午餐</span>
-        <span>60</span>
-      </div>
-      <div class="edit-del d-inline">
-        <a href="/edit">修改</a>
-        <a href="/delete">刪除</a>
+    {{#each expenses}}
+    <li>
+      <div class="item-group">
+        <div class="item-name d-inline col-6">
+          <i class="{{this.category.icon}}"></i>
+          <span>{{this.name}}</span>
+        </div>
+        <div class="item-amount d-inline col-3">
+          <span>{{this.amount}}</span>
+        </div>
+        <div class="edit-del d-inline col-3 text-end">
+          <a href="/edit">修改</a>
+          <a href="/delete">刪除</a>
+        </div>
       </div>
     </li>
-    <li class="list-group-item bg-secondary">
-      <div class="item-group d-inline">
-        <i class="fa-solid fa-utensils"></i>
-        <span>午餐</span>
-        <span>60</span>
-      </div>
-      <div class="edit-del d-inline">
-        <a href="/edit">修改</a>
-        <a href="/delete">刪除</a>
-      </div>
-    </li>
-    <li class="list-group-item">
-      <div class="item-group d-inline">
-        <i class="fa-solid fa-utensils"></i>
-        <span>午餐</span>
-        <span>60</span>
-      </div>
-      <div class="edit-del d-inline">
-        <a href="/edit">修改</a>
-        <a href="/delete">刪除</a>
-      </div>
-    </li>
+    {{/each}}
   </ul>
   <div class="d-flex justify-content-center mt-5">
-    <button class="btn-primary mb-3">新增支出</button>
+    <a href="/record/new"><button class="btn new-btn mb-3">新增支出</button></a>
   </div>
 </div>
