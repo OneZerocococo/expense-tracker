@@ -21,13 +21,14 @@
     <li>
       <div class="item-group">
         <div class="item-name d-inline col-6">
-          <i class="{{this.category.icon}}"></i>
+          <i class="{{showIcon this.category}}"></i>
           <span>{{this.name}}</span>
+          <small>{{dateFormat this.date}}</small>
         </div>
-        <div class="item-amount d-inline col-3">
+        <div class="item-amount d-inline col-2">
           <span>{{this.amount}}</span>
         </div>
-        <div class="edit-del d-inline col-3 text-end">
+        <div class="edit-del d-inline col-4 text-end">
           <a href="/record/{{this._id}}/edit">修改</a>
           <form action="/record/{{ this._id }}?_method=DELETE" style="display: inline" method="POST">
             <button class="btn btn-sm btn-danger del-btn" style="display: inline" type="submit">刪除</button>
