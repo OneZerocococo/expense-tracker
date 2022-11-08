@@ -21,8 +21,7 @@ router.get('/:id/edit', (req, res) => {
     .lean()
     .then(expense => {
       res.render('edit', { expense })
-    }
-    )
+    })
 })
 
 router.put('/:id', (req, res) => {
@@ -32,6 +31,15 @@ router.put('/:id', (req, res) => {
   Record.findByIdAndUpdate({ _id, userId }, req.body)
     .then(() => res.redirect('/'))
     .catch(err => console.log(err))
+})
+
+router.delete('/:id', (req, res) => {
+  const _id = req.params.id
+  const userId = req.user._id
+  return Record.findOne({ _id, userId })
+    .then((expense) => expense.remove())
+    .then(() => res.redirect('/'))
+    .catch((err) => console.log(err))
 })
 
 module.exports = router

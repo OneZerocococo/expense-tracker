@@ -71,3 +71,7 @@ ul :nth-child(even) .item-group {
   color: orangered;
   border-color: grey;
 }
+
+.del-btn {
+  text-decoration: none;
+}
