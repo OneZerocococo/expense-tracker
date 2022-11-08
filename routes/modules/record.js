@@ -14,8 +14,24 @@ router.post('/', (req, res) => {
     .catch(err => console.log(err))
 })
 
-router.get('/edit', (req, res) => {
-  res.render('edit')
+router.get('/:id/edit', (req, res) => {
+  const userId = req.user._id
+  const _id = req.params.id
+  Record.findOne({ _id, userId })
+    .lean()
+    .then(expense => {
+      res.render('edit', { expense })
+    }
+    )
+})
+
+router.put('/:id', (req, res) => {
+  const _id = req.params.id
+  const { name, date, category, amount } = req.body
+  const userId = req.user._id
+  Record.findByIdAndUpdate({ _id, userId }, req.body)
+    .then(() => res.redirect('/'))
+    .catch(err => console.log(err))
 })
 
 module.exports = router

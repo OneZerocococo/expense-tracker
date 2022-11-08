@@ -3,7 +3,7 @@ const routes = require('./routes')
 const exphbs = require('express-handlebars')
 const session = require('express-session')
 const usePassport = require('./config/passport')
-const showIcon = require('./public/categoryHelper')
+const methodOverride = require('method-override')
 const PORT = 3000
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
@@ -23,6 +23,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+app.use(methodOverride('_method'))
 usePassport(app)
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.isAuthenticated()

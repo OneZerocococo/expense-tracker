@@ -4,16 +4,16 @@
       <p>*必填欄位</p>
     </div>
     <div class="col-9">
-      <h3>請輸入你的支出</h3>
+      <h3>請修改你的支出</h3>
     </div>
   </div>
-  <form action="/" method="POST" class="edit-form">
+  <form action="/record/{{ expense._id }}?_method=PUT" method="POST" class="edit-form">
     <div class="row">
       <div class="edit-group-item col-4">
         <label for="name">名稱<span class="text-danger">*</span>:</label>
       </div>
       <div class="edit-group-item col-6">
-        <input type="text" name="name" required />
+        <input type="text" name="name" value="{{expense.name}}" required />
       </div>
     </div>
     <div class="row">
@@ -26,10 +26,10 @@
     </div>
     <div class="row">
       <div class="edit-group-item col-4">
-        <label for="amount">類別<span class="text-danger">*</span>:</label>
+        <label for="category">類別<span class="text-danger">*</span>:</label>
       </div>
       <div class="edit-group-item col-6">
-        <select class="category-dropdown" name="categorySelector" id="categorySelector" onchange="this.form.submit()">
+        <select class="category-dropdown" name="category" id="categorySelector">
           <option value="all">所有類別</option>
           <option value="1">家居物業</option>
           <option value="2">交通出行</option>
@@ -42,7 +42,7 @@
         <label for="amount">金額<span class="text-danger">*</span>:</label>
       </div>
       <div class="edit-group-item col-6">
-        <input type="number" name="amount" required />
+        <input type="number" name="amount" value="{{expense.amount}}" required />
       </div>
     </div>
 
