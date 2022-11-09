@@ -1,6 +1,6 @@
+const bcrypt = require('bcryptjs')
 const Record = require('../record')
 const User = require('../user')
-const Category = require('../category')
 const recordList = require('../seeds/record.json').results
 const userList = require('../seeds/user.json').results
 const db = require('../../config/mongoose')
@@ -13,7 +13,7 @@ db.once('open', () => {
       return User.create({
         name,
         email,
-        password
+        password: bcrypt.hashSync(password, bcrypt.genSaltSync(10))
       })
         .then(user => {
           const records = recordIndex.map(index => {
