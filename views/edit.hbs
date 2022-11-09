@@ -21,7 +21,7 @@
         <label for="name">日期<span class="text-danger">*</span>:</label>
       </div>
       <div class="edit-group-item col-6">
-        <input type="date" name="date" required />
+        <input type="date" name="date" value="{{expense.date}}" required />
       </div>
     </div>
     <div class="row">
@@ -29,11 +29,10 @@
         <label for="category">類別<span class="text-danger">*</span>:</label>
       </div>
       <div class="edit-group-item col-6">
-        <select class="category-dropdown" name="category" id="categorySelector">
-          <option value="all">所有類別</option>
-          <option value="1">家居物業</option>
-          <option value="2">交通出行</option>
-          <option value="3">休閒娛樂</option>
+        <select class="category-dropdown" name="category">
+          {{#each categories}}
+          <option value="{{this.id}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+          {{/each}}
         </select>
       </div>
     </div>
