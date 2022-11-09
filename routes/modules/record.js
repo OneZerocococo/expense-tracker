@@ -32,6 +32,7 @@ router.get('/:id/edit', (req, res) => {
           category.selected = true
         }
       })
+      console.log(expense)
       res.render('edit', { expense, categories })
     })
 })
