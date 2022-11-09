@@ -7,7 +7,7 @@ const methodOverride = require('method-override')
 const showIcon = require('./public/categoryHelper')
 const dateFormat = require('./public/dateHelper')
 const flash = require('connect-flash')
-const PORT = 3000
+const PORT = process.env.PORT
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
