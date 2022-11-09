@@ -50,6 +50,11 @@ ul :nth-child(even) .item-group {
   justify-content: space-between;
 }
 
+.category-dropdown {
+  width: 300px;
+  text-align: center;
+}
+
 .login-btn,
 .register-btn,
 .new-btn {
