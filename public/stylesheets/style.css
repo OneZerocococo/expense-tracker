@@ -25,12 +25,10 @@
 ul li {
   list-style: none;
   background-color: bisque;
-  height: 5vh;
 }
 
 ul :nth-child(even) .item-group {
   background-color: rgb(255, 255, 255);
-  height: 5vh;
 }
 
 .item-group {
@@ -48,6 +46,11 @@ ul :nth-child(even) .item-group {
   display: flex;
   margin: 5px 2px;
   justify-content: space-between;
+}
+
+.expense-date {
+  display: block;
+  font-size: 0.5%;
 }
 
 .category-dropdown {
