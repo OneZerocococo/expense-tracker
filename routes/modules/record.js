@@ -20,25 +20,25 @@ router.post('/', (req, res) => {
     .catch(err => console.log(err))
 })
 
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', (req, res, next) => {
   const userId = req.user._id
   const _id = req.params.id
-  const categories = []
+  const Categories = []
   Category.find()
     .lean()
-    .then(category => {
-      categories.push(...category)
+    .then(categories => {
+      return Promise.all([categories, Record.findOne({ _id, userId }).lean()])
     })
-  Record.findOne({ _id, userId })
-    .lean()
-    .then(expense => {
-      categories.forEach(category => {
+    .then(([categories, expense]) => {
+      Categories.push(...categories)
+      Categories.forEach(category => {
         if (category.id === expense.category) {
           category.selected = true
         }
       })
-      res.render('edit', { expense, categories })
+      return res.render('edit', { expense, categories: Categories })
     })
+    .catch(next)
 })
 
 router.put('/:id', (req, res) => {
